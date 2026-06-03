@@ -16,10 +16,6 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--bg-dark);
@@ -56,8 +52,13 @@ body {
 }
 
 @keyframes move {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(50px, 50px) scale(1.1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(50px, 50px) scale(1.1);
+    }
 }
 
 /* Navigation */
@@ -109,13 +110,15 @@ nav {
 .section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px 2rem; /* Reduced significantly to tighten up the gaps */
+    padding: 30px 2rem;
+    /* Reduced significantly to tighten up the gaps */
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 800;
-    margin-bottom: 1.5rem; /* Reduced further */
+    margin-bottom: 1.5rem;
+    /* Reduced further */
     text-align: center;
 }
 
@@ -165,20 +168,32 @@ nav {
 }
 
 .glass-img {
-    max-width: 480px; /* Increased from 400px */
+    max-width: 480px;
+    /* Increased from 400px */
     width: 100%;
-    aspect-ratio: 1 / 1; /* Ensures it stays perfectly round */
-    object-fit: cover; /* Prevents stretching */
-    border-radius: 50%; /* Makes it a circle */
+    aspect-ratio: 1 / 1;
+    /* Ensures it stays perfectly round */
+    object-fit: cover;
+    /* Prevents stretching */
+    border-radius: 50%;
+    /* Makes it a circle */
     box-shadow: var(--glass-shadow);
     border: 1px solid var(--glass-border);
     animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* Glassmorphism Classes */
@@ -240,10 +255,12 @@ nav {
     max-width: 800px;
     margin: 0 auto;
 }
+
 .about-card p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
 }
+
 .about-card p:last-child {
     margin-bottom: 0;
 }
@@ -276,7 +293,8 @@ nav {
     display: flex;
     align-items: center;
     gap: 3rem;
-    margin-bottom: 2rem; /* Reduced to bring projects closer */
+    margin-bottom: 2rem;
+    /* Reduced to bring projects closer */
     padding: 0;
     overflow: hidden;
 }
@@ -337,25 +355,9 @@ nav {
     text-align: center;
 }
 
-.contact-details {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    color: var(--text-muted);
-}
-
-.contact-details span {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
 .contact-card p {
     font-size: 1.2rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 .contact-links {
@@ -391,16 +393,17 @@ footer {
         text-align: center;
         padding-top: 120px;
     }
-    
+
     .hero-content {
         margin-bottom: 3rem;
     }
-    
+
     .hero-cta {
         justify-content: center;
     }
 
-    .project-card, .project-card.reverse {
+    .project-card,
+    .project-card.reverse {
         flex-direction: column;
     }
 
