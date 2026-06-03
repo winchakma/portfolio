@@ -16,6 +16,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--bg-dark);
@@ -333,9 +337,25 @@ nav {
     text-align: center;
 }
 
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.contact-details span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
 .contact-card p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
 }
 
 .contact-links {
