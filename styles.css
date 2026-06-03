@@ -360,6 +360,17 @@ nav {
     margin-bottom: 2rem;
 }
 
+.contact-details {
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-text {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 0 !important;
+    letter-spacing: 0.02em;
+}
+
 .contact-links {
     display: flex;
     justify-content: center;
