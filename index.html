@@ -1,185 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Win Chakma - Product Architect</title>
-    <meta name="description"
-        content="Portfolio of Win Chakma, Product Architect and Entrepreneur dedicated to building high-conversion digital ecosystems.">
+    <meta name="description" content="Portfolio of Win Chakma, AI-Native Product Architect.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- Background Elements -->
+
+    <!-- Background Blobs -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
 
     <!-- Navigation -->
     <nav>
-        <div class="nav-content">
-            <div class="logo">Win Chakma</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+        <div class="logo">Win Chakma</div>
+        <ul class="nav-links">
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#workflow">Process</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-        <div class="hero-content">
-            <h1 class="hero-title">Product Architect <br /><span class="gradient-text">& Systems Lead</span></h1>
-            <p class="hero-subtitle">Building high-conversion digital ecosystems & AI-Native Implementations.</p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
-            </div>
+    <header class="hero-header">
+        <h1 class="massive-text gradient-text">PRODUCT ARCHITECT</h1>
+        <div class="hero-subtext">
+            <p>I design and ship intelligent digital ecosystems from idea to production for modern businesses.</p>
+            <p>Based on building scalable AI-powered platforms across fitness, healthcare, travel, and automation.</p>
+            <a href="#contact" class="btn btn-primary" style="align-self: center;">Get In Touch &rarr;</a>
         </div>
-        <div class="hero-image">
-            <img src="./image/profile.png" alt="Win Chakma" class="glass-img">
+    </header>
+
+    <!-- Stickers Area -->
+    <section class="arch-grid">
+        <div class="portrait-container">
+            <!-- Glass Stickers -->
+            <div class="sticker sticker-circle s-teal">
+                <span>System</span>
+                <span>Design</span>
+            </div>
+            <div class="sticker sticker-rect s-yellow">
+                AI-Native<br>Experiences
+            </div>
+            <div class="sticker sticker-pill s-orange">
+                Product Strategy
+            </div>
+            <div class="sticker sticker-rect s-pink">
+                Ecosystem<br>Architecture
+            </div>
+            <div class="sticker sticker-circle s-green">
+                <span>Problem</span>
+                <span>Solving</span>
+            </div>
+
+            <!-- Extra Ecosystem Elements -->
+            <div class="sticker sticker-rect s-blue">
+                <div class="metric-number" style="color: #3b82f6;">4+</div>
+                <div class="metric-label">Years Experience</div>
+            </div>
+            <div class="sticker sticker-rect s-purple">
+                <div class="metric-number" style="color: #8b5cf6;">6+</div>
+                <div class="metric-label">Projects Shipped</div>
+            </div>
+            <div class="sticker sticker-pill s-cyan">
+                AI Integrations
+            </div>
+            <div class="sticker sticker-pill s-indigo">
+                Web Applications
+            </div>
+            <div class="sticker sticker-pill s-api">
+                API Integration
+            </div>
+            <div class="sticker sticker-pill s-ai-orch">
+                AI Orchestration
+            </div>
+            <div class="sticker sticker-pill s-vision">
+                Futuristic Vision
+            </div>
+            <div class="sticker sticker-pill s-build">
+                Product Building
+            </div>
+            
+            <img src="./image/profile.png" alt="Win Chakma" class="portrait-img">
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about section fade-in">
-        <h2 class="section-title">About Me</h2>
-        <div class="glass-card about-card">
-            <p>Hello, I am Win Chakma, a Product Architect and Entrepreneur dedicated to building high-conversion
-                digital ecosystems. I specialize in reverse-engineering user behavior to design products that solve real
-                friction points.</p>
-            <p>My approach is strictly user-first: I identify business bottlenecks, architect logical systems, and
-                orchestrate AI-driven workflows to deliver seamless, scalable results. I bridge the gap between complex
-                backend requirements and intuitive user experiences, acting as a force multiplier for teams that need to
-                scale efficiently.</p>
-            <p>My focus is on total system integrity, product-market fit, and data-driven growth.</p>
+    <div class="split-section">
+        <!-- Journey Section -->
+        <div id="journey" class="half-section">
+        <h2 class="section-title">Evolution</h2>
+        <div class="slider-container glass-card">
+            <div class="slider-nav">
+                <button class="slider-tab active" data-target="year-2013">2013</button>
+                <button class="slider-tab" data-target="year-2017">2017</button>
+                <button class="slider-tab" data-target="year-2019">2019</button>
+                <button class="slider-tab" data-target="year-2020">2020&ndash;2022</button>
+                <button class="slider-tab" data-target="year-2023">2023</button>
+                <button class="slider-tab" data-target="year-2024">2024&ndash;2026</button>
+            </div>
+            
+            <div class="slider-content">
+                <div id="year-2013" class="slider-panel active">
+                    <h4>First Exposure to Technology</h4>
+                    <p>My journey began with basic computer exploration. I learned how digital tools worked through everyday use of computers, applications, and games. This stage built my curiosity about technology and how systems function.</p>
+                </div>
+                <div id="year-2017" class="slider-panel">
+                    <h4>First Attempts at Building</h4>
+                    <p>I started experimenting with basic web development concepts, learning HTML and CSS and exploring how websites were created. During this period, I also became curious about cybersecurity and began developing a deeper interest in understanding digital systems.</p>
+                </div>
+                <div id="year-2019" class="slider-panel">
+                    <h4>Entrepreneurship & The Need to Build</h4>
+                    <p>My interest in entrepreneurship began during this period. I wanted to create solutions and build products, but I realized I needed technical skills to turn ideas into reality. That realization pushed me toward learning software development and understanding how technology could become a tool for creating businesses.</p>
+                </div>
+                <div id="year-2020" class="slider-panel">
+                    <h4>Exploration & Foundation Building</h4>
+                    <p>After getting my first PC, I began seriously exploring software development. I experimented with different technologies, repeatedly challenged myself to learn, and built an understanding of programming concepts, systems, and digital products. Although the traditional coding journey was challenging, this period gave me something valuable: broad exposure to how technology works.</p>
+                </div>
+                <div id="year-2023" class="slider-panel">
+                    <h4>Structured Learning & AI Discovery</h4>
+                    <p>I joined Creative IT Institute to strengthen my technical foundation while continuing to explore emerging technologies. I began experimenting with AI tools, development workflows, and new approaches to building software. This became the transition from learning technology to using technology as a creation tool.</p>
+                </div>
+                <div id="year-2024" class="slider-panel">
+                    <h4>From Concepts to Real Products</h4>
+                    <p>With years of accumulated exposure across technology, business, and problem-solving, I began building complete digital ecosystems. When AI-native development workflows became possible, I was able to combine my previous learning, product understanding, and system thinking to move quickly from ideas to working products. Today, I design and build AI-powered ecosystems across industries including fitness, healthcare, travel, broadcasting, and automation.</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+        <!-- Workflow Section -->
+        <div id="workflow" class="half-section">
+            <h2 class="section-title">How I Build</h2>
+        <div class="workflow-container">
+            <div class="workflow-step glass-card">
+                <span class="step-number">01</span>
+                <h4>Understand<br>Business Problem</h4>
+            </div>
+            <div class="workflow-arrow">&rarr;</div>
+            <div class="workflow-step glass-card">
+                <span class="step-number">02</span>
+                <h4>Product<br>Strategy</h4>
+            </div>
+            <div class="workflow-arrow">&rarr;</div>
+            <div class="workflow-step glass-card">
+                <span class="step-number">03</span>
+                <h4>System<br>Architecture</h4>
+            </div>
+            <div class="workflow-arrow">&rarr;</div>
+            <div class="workflow-step glass-card">
+                <span class="step-number">04</span>
+                <h4>AI<br>Integration</h4>
+            </div>
+            <div class="workflow-arrow">&rarr;</div>
+            <div class="workflow-step glass-card">
+                <span class="step-number">05</span>
+                <h4>Testing &<br>Iteration</h4>
+            </div>
+            <div class="workflow-arrow">&rarr;</div>
+            <div class="workflow-step glass-card" style="border-color: var(--accent-1);">
+                <span class="step-number gradient-text">06</span>
+                <h4>Deployment</h4>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section fade-in">
-        <h2 class="section-title">Core Competencies</h2>
-        <div class="skills-grid">
-            <div class="skill-tag">Product Management</div>
-            <div class="skill-tag">System Design</div>
+    <div id="skills" class="section">
+        <h2 class="section-title">Core Capabilities</h2>
+        <div class="skills-grid glass-card">
+            <div class="skill-tag primary-skill">Product Architecture</div>
+            <div class="skill-tag primary-skill">System Design</div>
+            <div class="skill-tag primary-skill">AI Product Development</div>
+            
             <div class="skill-tag">Product Strategy</div>
-            <div class="skill-tag">Team Problem Solving</div>
-            <div class="skill-tag">AI Orchestration</div>
-            <div class="skill-tag">AI-Native Implementation</div>
-            <div class="skill-tag">Rapid Prototyping</div>
-            <div class="skill-tag">Product Architecture</div>
+            <div class="skill-tag">Artificial Intelligence</div>
+            <div class="skill-tag">Generative AI</div>
+            <div class="skill-tag">AI Integration</div>
+            <div class="skill-tag">Automation</div>
+            <div class="skill-tag">API Integration</div>
+            <div class="skill-tag">Software Architecture</div>
             <div class="skill-tag">Business Process Automation</div>
-            <div class="skill-tag">Strategic Growth Auditing</div>
+            <div class="skill-tag">UX Design</div>
         </div>
-    </section>
+    </div>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects section fade-in">
-        <h2 class="section-title">Featured Work</h2>
+    <div id="projects" class="section">
+        <h2 class="section-title">Selected Work</h2>
 
-        <div class="project-card glass-card">
-            <div class="project-info">
-                <h3>East Blue Gym Platform</h3>
-                <p>Architected a fully operational gym management ecosystem. Integrated payment gateways, admin command
-                    centers, and real-time data tracking. Utilized advanced AI orchestration to design a scalable
-                    backend, ensuring seamless user interaction and operational efficiency.</p>
-                <p>Created a fully functional gym ecosystem with an AI-driven, user-centric approach. Designed and built
-                    this digital ecosystem through spoken interaction, significantly speeding up the development process
-                    without the need for manual coding.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">Built in 16 Days</span>
-                    <span class="tech-tag">Voice-Commanded</span>
-                    <span class="tech-tag">AI-Assisted Development</span>
+        <!-- Featured Grid (Row 1) -->
+        <div class="projects-grid-2">
+            <!-- Project 1 -->
+            <div class="project-card vertical-card glass-card">
+                <div class="project-media">
+                    <a href="https://live.ptv.com.bd/" target="_blank" class="iframe-overlay" title="View Live"></a>
+                    <iframe src="https://live.ptv.com.bd/" class="project-iframe" loading="lazy" title="IPTV Broadcasting System"></iframe>
                 </div>
-                <a href="https://mygym-p9rd.vercel.app/" target="_blank" rel="noopener noreferrer"
-                    class="btn btn-primary btn-sm">Live Preview</a>
+                <div class="project-info">
+                    <h3>IPTV Broadcasting System</h3>
+                    <p>Designed and delivered a production-ready IPTV Broadcasting System for a real client.</p>
+                    <p>Built around real business requirements, focusing on digital broadcasting workflows, content management, and reliable media delivery.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Client Project</span>
+                        <span class="tech-tag">Production</span>
+                        <span class="tech-tag">System Architecture</span>
+                    </div>
+                    <a href="https://live.ptv.com.bd/" target="_blank" class="btn btn-primary">View Live</a>
+                </div>
             </div>
-            <div class="project-media">
-                <video controls class="glass-video">
-                    <source src="./videos/east blue.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+
+            <!-- Project 2 -->
+            <div class="project-card vertical-card glass-card">
+                <div class="project-media">
+                    <a href="https://mygym-p9rd.vercel.app/" target="_blank" class="iframe-overlay" title="View Live"></a>
+                    <video muted autoplay loop style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="./videos/east blue.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h3>East Blue Gym Ecosystem</h3>
+                    <p>Architected a complete fitness business ecosystem, addressing the core operational bottlenecks of modern gyms.</p>
+                    <p>Features an integrated AI assistant, dynamic membership management, optimized trainer workflows, and a robust booking system.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AI Assistant</span>
+                        <span class="tech-tag">Membership Management</span>
+                        <span class="tech-tag">Full Ecosystem</span>
+                    </div>
+                    <a href="https://mygym-p9rd.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
+                </div>
             </div>
         </div>
 
-        <div class="project-card glass-card reverse">
+        <!-- Secondary Grid (Row 2) -->
+        <div class="projects-grid-3">
+            <!-- Project 3 -->
+            <div class="project-card vertical-card glass-card">
+                <div class="project-media">
+                    <a href="https://travel-gray-nu.vercel.app/" target="_blank" class="iframe-overlay" title="View Live"></a>
+                    <iframe src="https://travel-gray-nu.vercel.app/" class="project-iframe" loading="lazy" title="AI Travel Ecosystem"></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>AI Travel Ecosystem</h3>
+                    <p>A comprehensive travel booking architecture resolving the friction of multi-modal trip planning.</p>
+                    <p>Deeply integrated with multiple travel APIs to aggregate flight and hotel data into unified booking workflows. Enhanced with an intelligent AI assistant.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Travel APIs</span>
+                        <span class="tech-tag">Booking Workflows</span>
+                        <span class="tech-tag">AI Assistance</span>
+                    </div>
+                    <a href="https://travel-gray-nu.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card vertical-card glass-card">
+                <div class="project-media">
+                    <a href="https://medicare-ecru-three.vercel.app/" target="_blank" class="iframe-overlay" title="View Live"></a>
+                    <iframe src="https://medicare-ecru-three.vercel.app/" class="project-iframe" loading="lazy" title="AI Healthcare Ecosystem"></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>AI Healthcare Ecosystem</h3>
+                    <p>An AI-enabled healthcare marketplace designed to connect patients with doctors while creating a scalable platform for clinics.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Healthcare Tech</span>
+                        <span class="tech-tag">Marketplace</span>
+                        <span class="tech-tag">AI Integration</span>
+                    </div>
+                    <a href="https://medicare-ecru-three.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card vertical-card glass-card">
+                <div class="project-media">
+                    <a href="https://chatbot-ten-blond-51.vercel.app/" target="_blank" class="iframe-overlay" title="View Live"></a>
+                    <iframe src="https://chatbot-ten-blond-51.vercel.app/" class="project-iframe" loading="lazy" title="AI Website Assistant"></iframe>
+                </div>
+                <div class="project-info">
+                    <h3>AI Website Assistant</h3>
+                    <p>Developed a deeply integrated, website-aware AI assistant utilizing the Gemini API to transform static sites into interactive experiences.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Website-Aware AI</span>
+                        <span class="tech-tag">Support Automation</span>
+                    </div>
+                    <a href="https://chatbot-ten-blond-51.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jarvis Standalone (Row 3) -->
+        <div class="project-card vertical-card full-width-card glass-card">
+            <div class="project-media">
+                <video controls muted autoplay loop style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="./videos/ai(mj).mp4" type="video/mp4">
+                </video>
+            </div>
             <div class="project-info">
                 <h3>AI Personal Jarvis</h3>
-                <p>Engineered a highly intelligent AI Personal Assistant. Architected a dynamic system prioritizing
-                    scalable, automated workflows and executed entirely via voice-directed AI engineering. Designed to
-                    orchestrate complex digital environments effortlessly.</p>
+                <p>Engineered a highly intelligent AI Personal Assistant. Architected a dynamic system prioritizing scalable, automated workflows.</p>
                 <div class="project-tech">
-                    <span class="tech-tag">Built in 8 Days</span>
-                    <span class="tech-tag">Voice-Commanded</span>
+                    <span class="tech-tag">System Architecture</span>
+                    <span class="tech-tag">Automated Workflows</span>
                 </div>
-            </div>
-            <div class="project-media">
-                <video controls class="glass-video">
-                    <source src="./videos/ai(mj).mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
             </div>
         </div>
 
-        <div class="project-card glass-card">
-            <div class="project-info">
-                <h3>Travel Platform</h3>
-                <p>Built a fully functional travel platform with an AI-powered assistant, real-time support chat, and seamless booking flow across hotels, flights, tours, car hire, and cruises. Designed and deployed through voice-directed AI development without manual coding.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">Built in 2 Days</span>
-                    <span class="tech-tag">Voice-Commanded</span>
-                    <span class="tech-tag">AI-Assisted Development</span>
-                </div>
-                <a href="https://travel-gray-nu.vercel.app/" target="_blank" rel="noopener noreferrer"
-                    class="btn btn-primary btn-sm">Live Preview</a>
-            </div>
-            <div class="project-media">
-                <img src="./image/travel.jpg" alt="Travel Platform" class="glass-video" style="width: 100%; height: auto; object-fit: cover;">
-            </div>
-        </div>
-
-        <div class="project-card glass-card reverse">
-            <div class="project-info">
-                <h3>Interactive AI Assistant</h3>
-                <p>Experience a seamless, real-time interactive presence—my custom-engineered AI assistant, powered by the Gemini 2.5 Flash API, serves as a dynamic, voice-enabled interface that provides visitors with an intuitive and responsive gateway to my projects, professional journey, and technical expertise.</p>
-                <div class="project-tech">
-                    <span class="tech-tag">Gemini 2.5 Flash API</span>
-                    <span class="tech-tag">Voice-Enabled</span>
-                    <span class="tech-tag">AI Integration</span>
-                </div>
-                <a href="https://chatbot-ten-blond-51.vercel.app/" target="_blank" rel="noopener noreferrer"
-                    class="btn btn-primary btn-sm">Live Preview</a>
-            </div>
-            <div class="project-media">
-                <img src="./image/chatbot.jpg" alt="Interactive AI Assistant" class="glass-video" style="width: 100%; height: auto; object-fit: cover;">
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section fade-in">
+    <div id="contact" class="section glass-card contact-card">
         <h2 class="section-title">Get In Touch</h2>
-        <div class="glass-card contact-card">
-            <p>If you are building a future-forward product and need an architect who thinks like a founder, let's connect.</p>
-            <div class="contact-details">
-                <p class="contact-info-text">📧 winchakma123@gmail.com &nbsp;|&nbsp; 📞 +8801617558048</p>
-            </div>
-            <div class="contact-links">
-                <a href="https://www.linkedin.com/in/win-chakma-86b616278/" target="_blank" class="btn btn-primary">LinkedIn Profile</a>
-            </div>
-        </div>
-    </section>
+        <p>If you are building a future-forward product and need an architect who thinks like a founder, let's connect.</p>
+        <p style="font-weight: 800; color: var(--text-muted); margin-bottom: 2rem;">📧 winchakma123@gmail.com &nbsp;|&nbsp; 📞 +8801617558048</p>
+        <a href="https://www.linkedin.com/in/win-chakma-86b616278/" target="_blank" class="btn btn-primary">LinkedIn Profile</a>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Win Chakma. All rights reserved.</p>
+        <p>&copy; 2026 Win Chakma. Architecting Digital Ecosystems.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
