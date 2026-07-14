@@ -53,12 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(fader);
     });
 
-    // Mobile scroll-based hover effect for stickers
+    // Mobile scroll-based hover effect for interactive elements
     // Matches the CSS media query to only apply on touch screens
     if (window.matchMedia("(pointer: coarse)").matches) {
-        const stickers = document.querySelectorAll('.sticker');
+        const hoverElements = document.querySelectorAll('.sticker, .glass-card, .project-card, .skill-tag, .workflow-step, .slider-tab');
         
-        const stickerObserver = new IntersectionObserver((entries) => {
+        const hoverObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('scroll-hover');
@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
             rootMargin: "-30% 0px -30% 0px" 
         });
 
-        stickers.forEach(sticker => {
-            stickerObserver.observe(sticker);
+        hoverElements.forEach(el => {
+            hoverObserver.observe(el);
         });
     }
 

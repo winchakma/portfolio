@@ -407,6 +407,34 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     .workflow-step:hover .step-number { color: rgba(255,255,255,0.1) !important; }
     .workflow-step:active { border-color: var(--accent-1) !important; box-shadow: 0 0 20px rgba(59,130,246,0.3) !important; }
     .workflow-step:active .step-number { color: var(--accent-1) !important; }
+
+    /* Scroll-hover overrides for touch devices */
+    .glass-card.scroll-hover { transform: translateY(-5px) !important; border-color: var(--accent-1) !important; box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3) !important; }
+    .project-card.scroll-hover { border-color: var(--accent-2) !important; box-shadow: 0 15px 40px rgba(139, 92, 246, 0.3) !important; }
+    
+    .skill-tag.scroll-hover { background: rgba(255,255,255,0.05) !important; border-color: var(--glass-border) !important; }
+    
+    .slider-tab.scroll-hover { color: var(--text-main) !important; background: rgba(255, 255, 255, 0.05) !important; }
+    .slider-tab:nth-child(1).scroll-hover { background: rgba(74, 210, 196, 0.2) !important; color: var(--color-teal) !important; box-shadow: 0 0 10px rgba(74, 210, 196, 0.3) !important; }
+    .slider-tab:nth-child(2).scroll-hover { background: rgba(252, 217, 20, 0.2) !important; color: var(--color-yellow) !important; box-shadow: 0 0 10px rgba(252, 217, 20, 0.3) !important; }
+    .slider-tab:nth-child(3).scroll-hover { background: rgba(255, 139, 61, 0.2) !important; color: var(--color-orange) !important; box-shadow: 0 0 10px rgba(255, 139, 61, 0.3) !important; }
+    .slider-tab:nth-child(4).scroll-hover { background: rgba(249, 77, 118, 0.2) !important; color: var(--color-pink) !important; box-shadow: 0 0 10px rgba(249, 77, 118, 0.3) !important; }
+    .slider-tab:nth-child(5).scroll-hover { background: rgba(0, 211, 108, 0.2) !important; color: var(--color-green) !important; box-shadow: 0 0 10px rgba(0, 211, 108, 0.3) !important; }
+    .slider-tab:nth-child(6).scroll-hover { background: rgba(59, 130, 246, 0.2) !important; color: var(--accent-1) !important; box-shadow: 0 0 10px rgba(59, 130, 246, 0.3) !important; }
+
+    .workflow-step.scroll-hover { border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; transform: translateY(-5px) !important; }
+    .workflow-step:nth-child(1).scroll-hover { border-color: var(--color-teal) !important; box-shadow: 0 15px 40px rgba(74, 210, 196, 0.2) !important; }
+    .workflow-step:nth-child(1).scroll-hover .step-number { color: var(--color-teal) !important; }
+    .workflow-step:nth-child(3).scroll-hover { border-color: var(--color-yellow) !important; box-shadow: 0 15px 40px rgba(252, 217, 20, 0.2) !important; }
+    .workflow-step:nth-child(3).scroll-hover .step-number { color: var(--color-yellow) !important; }
+    .workflow-step:nth-child(5).scroll-hover { border-color: var(--color-orange) !important; box-shadow: 0 15px 40px rgba(255, 139, 61, 0.2) !important; }
+    .workflow-step:nth-child(5).scroll-hover .step-number { color: var(--color-orange) !important; }
+    .workflow-step:nth-child(7).scroll-hover { border-color: var(--color-pink) !important; box-shadow: 0 15px 40px rgba(249, 77, 118, 0.2) !important; }
+    .workflow-step:nth-child(7).scroll-hover .step-number { color: var(--color-pink) !important; }
+    .workflow-step:nth-child(9).scroll-hover { border-color: var(--color-green) !important; box-shadow: 0 15px 40px rgba(0, 211, 108, 0.2) !important; }
+    .workflow-step:nth-child(9).scroll-hover .step-number { color: var(--color-green) !important; }
+    .workflow-step:nth-child(11).scroll-hover { border-color: var(--accent-1) !important; box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2) !important; }
+    .workflow-step:nth-child(11).scroll-hover .step-number { color: var(--accent-1) !important; }
 }
 
 /* ===================== RESPONSIVE BREAKPOINTS ===================== */
@@ -502,10 +530,15 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
 
     /* Fix only the most extreme left/right values that would overflow the narrow screen.
        We DO NOT touch top/bottom, so they inherit perfectly from desktop and won't stretch! */
-    .s-blue { left: -10%; }
-    .s-yellow { left: -5%; }
-    .s-purple { right: -10%; }
-    .s-indigo { right: -5%; }
+    .s-vision { left: 0%; }
+    .s-blue   { left: 0%; }
+    .s-api    { left: 0%; }
+    .s-yellow { left: 0%; }
+    
+    .s-ai-orch{ right: 0%; }
+    .s-purple { right: 0%; }
+    .s-build  { right: 0%; }
+    .s-indigo { right: 0%; }
 
     /* The JavaScript will add .scroll-hover when they enter the viewport center */
     /* We define those classes here to match the desktop hover states */
