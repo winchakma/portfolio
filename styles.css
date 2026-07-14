@@ -371,85 +371,43 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
 .slider-tab { touch-action: manipulation; }
 .slider-tab:active { transform: scale(0.95); }
 
-/* ── @media (hover: none) — touch-only devices ──────────────────────
-   On touch screens, :hover never fires reliably.
-   We disable hover transforms (which can get stuck on mobile)
-   and instead use :active for immediate tactile feedback.
-─────────────────────────────────────────────────────────────────── */
-@media (hover: none) {
-    /* Glass cards: disable the translateY hover (gets stuck on mobile) */
-    .glass-card:hover {
-        transform: none;
-        border-color: var(--glass-border);
-        box-shadow: var(--glass-shadow);
-    }
-    /* Provide tap feedback instead */
-    .glass-card:active {
-        transform: scale(0.985);
-        border-color: var(--accent-1);
-        box-shadow: 0 0 30px rgba(59, 130, 246, 0.35);
-    }
-    /* Project cards tap */
-    .project-card:active {
-        border-color: var(--accent-2);
-        box-shadow: 0 0 30px rgba(139, 92, 246, 0.35);
-    }
+/* ══ TOUCH DEVICES ══════════════════════════════════════════════════
+   @media (pointer: coarse) reliably matches ALL touch-primary devices.
+   (hover: none) is unreliable — many Android phones report hover: hover.
+   This block kills EVERY :hover rule so nothing "sticks" on scroll/tap.
+════════════════════════════════════════════════════════════════════ */
+@media (pointer: coarse) {
+    /* Glass cards */
+    .glass-card:hover { transform: none !important; border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; }
+    .glass-card:active { transform: scale(0.985) !important; border-color: var(--accent-1) !important; box-shadow: 0 0 30px rgba(59,130,246,0.35) !important; }
+    .project-card:active { border-color: var(--accent-2) !important; box-shadow: 0 0 30px rgba(139,92,246,0.35) !important; }
     /* Buttons */
-    .btn-primary:hover { transform: none; box-shadow: none; }
-    .btn-primary:active { transform: scale(0.95); box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4); }
+    .btn-primary:hover { transform: none !important; box-shadow: none !important; }
+    .btn-primary:active { transform: scale(0.95) !important; box-shadow: 0 8px 20px rgba(59,130,246,0.4) !important; }
     /* Skill tags */
-    .skill-tag:hover { transform: none; background: rgba(255,255,255,0.05); border-color: var(--glass-border); }
-    .skill-tag:active { background: var(--accent-1); border-color: var(--accent-1); transform: scale(1.06); }
-    /* Nav links */
+    .skill-tag:hover { transform: none !important; background: rgba(255,255,255,0.05) !important; border-color: var(--glass-border) !important; }
+    .skill-tag:active { background: var(--accent-1) !important; border-color: var(--accent-1) !important; transform: scale(1.06) !important; }
+    /* Nav */
     .nav-links a:hover { color: var(--text-muted) !important; }
     .nav-links a:active { color: var(--accent-1) !important; }
     .hamburger:hover { background: none !important; }
-    /* Workflow steps — also reset all colored nth-child hovers */
-    .workflow-step:hover { border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; }
-    .workflow-step:hover .step-number { color: rgba(255,255,255,0.1) !important; }
+    /* Sticker hovers */
+    .sticker:hover { transform: none !important; border-color: var(--glass-border) !important; background: var(--bg-card) !important; color: var(--text-main) !important; text-shadow: none !important; box-shadow: var(--glass-shadow) !important; }
+    /* Slider tabs — base + all 6 nth-child colored hovers */
+    .slider-tab:hover,
+    .slider-tab:nth-child(1):hover, .slider-tab:nth-child(2):hover,
+    .slider-tab:nth-child(3):hover, .slider-tab:nth-child(4):hover,
+    .slider-tab:nth-child(5):hover, .slider-tab:nth-child(6):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
+    .slider-tab:active { transform: scale(0.93) !important; }
+    /* Workflow steps — base + all 6 nth-child colored hovers */
+    .workflow-step:hover,
     .workflow-step:nth-child(1):hover, .workflow-step:nth-child(3):hover,
     .workflow-step:nth-child(5):hover, .workflow-step:nth-child(7):hover,
-    .workflow-step:nth-child(9):hover, .workflow-step:nth-child(11):hover { border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; }
-    .workflow-step:active { border-color: var(--accent-1) !important; box-shadow: 0 0 20px rgba(59, 130, 246, 0.3) !important; }
+    .workflow-step:nth-child(9):hover, .workflow-step:nth-child(11):hover { border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; transform: none !important; }
+    .workflow-step:hover .step-number { color: rgba(255,255,255,0.1) !important; }
+    .workflow-step:active { border-color: var(--accent-1) !important; box-shadow: 0 0 20px rgba(59,130,246,0.3) !important; }
     .workflow-step:active .step-number { color: var(--accent-1) !important; }
-    /* Slider tabs — reset base and ALL colorful nth-child hovers */
-    .slider-tab:hover { color: var(--text-muted) !important; background: transparent !important; box-shadow: none !important; }
-    .slider-tab:nth-child(1):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
-    .slider-tab:nth-child(2):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
-    .slider-tab:nth-child(3):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
-    .slider-tab:nth-child(4):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
-    .slider-tab:nth-child(5):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
-    .slider-tab:nth-child(6):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
-    .slider-tab:active { transform: scale(0.93) !important; }
-    /* Mobile skill pills */
-    .ms-pill:active { opacity: 0.75; transform: scale(0.95); }
-    .ms-metric:active { border-color: var(--accent-1); box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
 }
-
-/* == html.touch belt-and-suspenders fallback ==========================
-   JS adds 'touch' to <html> on first touchstart, removes on mousemove.
-   Covers browsers where @media(hover:none) is unreliable.
-====================================================================== */
-html.touch .glass-card:hover { transform: none !important; border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; }
-html.touch .btn-primary:hover { transform: none !important; box-shadow: none !important; }
-html.touch .skill-tag:hover { transform: none !important; background: rgba(255,255,255,0.05) !important; border-color: var(--glass-border) !important; }
-html.touch .nav-links a:hover { color: var(--text-muted) !important; }
-html.touch .hamburger:hover { background: none !important; }
-html.touch .slider-tab:hover,
-html.touch .slider-tab:nth-child(1):hover,
-html.touch .slider-tab:nth-child(2):hover,
-html.touch .slider-tab:nth-child(3):hover,
-html.touch .slider-tab:nth-child(4):hover,
-html.touch .slider-tab:nth-child(5):hover,
-html.touch .slider-tab:nth-child(6):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
-html.touch .workflow-step:hover,
-html.touch .workflow-step:nth-child(1):hover,
-html.touch .workflow-step:nth-child(3):hover,
-html.touch .workflow-step:nth-child(5):hover,
-html.touch .workflow-step:nth-child(7):hover,
-html.touch .workflow-step:nth-child(9):hover,
-html.touch .workflow-step:nth-child(11):hover { border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; }
-html.touch .workflow-step:hover .step-number { color: rgba(255,255,255,0.1) !important; }
 
 /* ===================== RESPONSIVE BREAKPOINTS ===================== */
 
@@ -509,8 +467,41 @@ html.touch .workflow-step:hover .step-number { color: rgba(255,255,255,0.1) !imp
         height: auto;
         border-radius: 20px;
     }
-    /* Hide stickers on small tablets, they overflow */
-    .sticker { display: none; }
+    /* Stickers: reflow from absolute to flex-wrap (same look, mobile-friendly) */
+    .sticker {
+        position: static !important;
+        transform: none !important;
+        animation: none !important;
+        font-size: 0.75rem;
+        padding: 0.5rem 0.9rem;
+    }
+    .sticker-circle {
+        width: auto;
+        height: auto;
+        border-radius: 50px;
+        flex-direction: row;
+        gap: 0.25rem;
+        padding: 0.5rem 1rem;
+    }
+    .portrait-container {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        justify-content: center;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        padding: 1rem 1rem 0;
+    }
+    .portrait-img {
+        flex-basis: 100%;
+        display: block;
+        width: 65%;
+        max-width: 350px;
+        height: auto;
+        border-radius: 20px;
+        margin: 0 auto 0.5rem auto;
+    }
+    /* Hide separate mobile-skills div — stickers ARE the skills */
+    .mobile-skills { display: none !important; }
 
     /* Glass card padding */
     .glass-card { padding: 1.75rem; }
@@ -530,56 +521,6 @@ html.touch .workflow-step:hover .step-number { color: rgba(255,255,255,0.1) !imp
     /* Section */
     .section-title { font-size: 2.2rem; letter-spacing: 1px; }
     .section { padding: 16px 1rem; }
-
-    /* Mobile Skills Section */
-    .mobile-skills {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.25rem;
-        padding: 0 1rem 2rem;
-        width: 100%;
-    }
-    .mobile-skills-metrics {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        width: 100%;
-        max-width: 400px;
-    }
-    .ms-metric {
-        flex: 1;
-        background: var(--bg-card);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid var(--glass-border);
-        border-radius: 16px;
-        padding: 1rem 0.75rem;
-        text-align: center;
-        transition: all 0.3s ease;
-    }
-    .ms-metric .metric-number { font-size: 2.2rem; font-weight: 900; line-height: 1; margin-bottom: 0.25rem; }
-    .ms-metric .metric-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-    .mobile-skills-pills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
-        justify-content: center;
-        max-width: 500px;
-    }
-    .ms-pill {
-        background: var(--bg-card);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid var(--glass-border);
-        border-radius: 50px;
-        padding: 0.45rem 1rem;
-        font-size: 0.8rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        transition: all 0.2s ease;
-    }
 }
 
 /* --- Large phone (600px) --- */
@@ -626,16 +567,14 @@ html.touch .workflow-step:hover .step-number { color: rgba(255,255,255,0.1) !imp
 @media (max-width: 480px) {
     :root { --nav-height: 58px; }
     .arch-grid { border-radius: 20vw 20vw 0 0; }
-    .portrait-img { width: 100%; border-radius: 10px; }
+    .portrait-img { width: 80% !important; max-width: 280px !important; border-radius: 10px; }
     .section-title { font-size: 1.5rem; letter-spacing: 0.5px; }
     .glass-card { padding: 1rem; border-radius: 12px; }
     .slider-container { gap: 1.25rem; padding: 1rem; }
     .workflow-step { padding: 1rem 0.75rem; }
-    .metric-number { font-size: 2rem; }
+    .metric-number { font-size: 1.8rem; }
     .btn { display: block; width: fit-content; margin: 0 auto; }
-    /* Mobile skills tighter on small phones */
-    .ms-metric { padding: 0.75rem 0.5rem; }
-    .ms-metric .metric-number { font-size: 1.8rem; }
-    .ms-pill { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
-    .mobile-skills { gap: 0.9rem; padding: 0 0.75rem 1.5rem; }
+    /* Stickers even smaller */
+    .sticker { font-size: 0.65rem; padding: 0.4rem 0.7rem; }
+    .portrait-container { gap: 0.45rem; }
 }
