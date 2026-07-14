@@ -526,8 +526,8 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     }
 
     /* Fix bleeding by bringing stickers inside the viewport horizontally */
-    .s-teal { left: 15%; }
-    .s-vision { left: 5%; }
+    .s-teal { left: 15%; top: 22%; }
+    .s-vision { left: 5%; top: 6%; }
     .s-blue { left: 2%; }
     .s-api { left: 6%; }
     .s-cyan { left: 8%; }
@@ -536,8 +536,8 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     .s-pink { right: 8%; }
     .s-ai-orch { right: 4%; }
     .s-purple { right: 2%; }
-    .s-build { right: 6%; }
-    .s-green { right: 12%; }
+    .s-build { right: 6%; top: 75%; }
+    .s-green { right: 12%; bottom: 38%; }
     .s-indigo { right: 3%; }
     .s-orange { right: 18%; }
 
