@@ -1,4 +1,18 @@
+// ── Sticky Hover Fix ─────────────────────────────────────────────────
+// CSS :hover gets "stuck" on touch devices after tap/scroll.
+// Adding html.touch disables all :hover rules via our CSS fallback.
+(function fixStickyHover() {
+    var html = document.documentElement;
+    html.addEventListener('touchstart', function() {
+        html.classList.add('touch');
+    }, { passive: true });
+    html.addEventListener('mousemove', function() {
+        html.classList.remove('touch');
+    });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

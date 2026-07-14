@@ -401,15 +401,55 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     .skill-tag:hover { transform: none; background: rgba(255,255,255,0.05); border-color: var(--glass-border); }
     .skill-tag:active { background: var(--accent-1); border-color: var(--accent-1); transform: scale(1.06); }
     /* Nav links */
-    .nav-links a:active { color: var(--accent-1); }
-    /* Workflow steps */
+    .nav-links a:hover { color: var(--text-muted) !important; }
+    .nav-links a:active { color: var(--accent-1) !important; }
+    .hamburger:hover { background: none !important; }
+    /* Workflow steps — also reset all colored nth-child hovers */
+    .workflow-step:hover { border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; }
+    .workflow-step:hover .step-number { color: rgba(255,255,255,0.1) !important; }
+    .workflow-step:nth-child(1):hover, .workflow-step:nth-child(3):hover,
+    .workflow-step:nth-child(5):hover, .workflow-step:nth-child(7):hover,
+    .workflow-step:nth-child(9):hover, .workflow-step:nth-child(11):hover { border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; }
     .workflow-step:active { border-color: var(--accent-1) !important; box-shadow: 0 0 20px rgba(59, 130, 246, 0.3) !important; }
     .workflow-step:active .step-number { color: var(--accent-1) !important; }
-    /* Slider tabs */
-    .slider-tab:active { transform: scale(0.93); }
-    /* Ms pills */
-    .ms-pill:active { opacity: 0.7; transform: scale(0.95); }
+    /* Slider tabs — reset base and ALL colorful nth-child hovers */
+    .slider-tab:hover { color: var(--text-muted) !important; background: transparent !important; box-shadow: none !important; }
+    .slider-tab:nth-child(1):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
+    .slider-tab:nth-child(2):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
+    .slider-tab:nth-child(3):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
+    .slider-tab:nth-child(4):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
+    .slider-tab:nth-child(5):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
+    .slider-tab:nth-child(6):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
+    .slider-tab:active { transform: scale(0.93) !important; }
+    /* Mobile skill pills */
+    .ms-pill:active { opacity: 0.75; transform: scale(0.95); }
+    .ms-metric:active { border-color: var(--accent-1); box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
 }
+
+/* == html.touch belt-and-suspenders fallback ==========================
+   JS adds 'touch' to <html> on first touchstart, removes on mousemove.
+   Covers browsers where @media(hover:none) is unreliable.
+====================================================================== */
+html.touch .glass-card:hover { transform: none !important; border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; }
+html.touch .btn-primary:hover { transform: none !important; box-shadow: none !important; }
+html.touch .skill-tag:hover { transform: none !important; background: rgba(255,255,255,0.05) !important; border-color: var(--glass-border) !important; }
+html.touch .nav-links a:hover { color: var(--text-muted) !important; }
+html.touch .hamburger:hover { background: none !important; }
+html.touch .slider-tab:hover,
+html.touch .slider-tab:nth-child(1):hover,
+html.touch .slider-tab:nth-child(2):hover,
+html.touch .slider-tab:nth-child(3):hover,
+html.touch .slider-tab:nth-child(4):hover,
+html.touch .slider-tab:nth-child(5):hover,
+html.touch .slider-tab:nth-child(6):hover { background: transparent !important; color: var(--text-muted) !important; box-shadow: none !important; }
+html.touch .workflow-step:hover,
+html.touch .workflow-step:nth-child(1):hover,
+html.touch .workflow-step:nth-child(3):hover,
+html.touch .workflow-step:nth-child(5):hover,
+html.touch .workflow-step:nth-child(7):hover,
+html.touch .workflow-step:nth-child(9):hover,
+html.touch .workflow-step:nth-child(11):hover { border-color: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; }
+html.touch .workflow-step:hover .step-number { color: rgba(255,255,255,0.1) !important; }
 
 /* ===================== RESPONSIVE BREAKPOINTS ===================== */
 
