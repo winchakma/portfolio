@@ -472,53 +472,40 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
         margin-bottom: 2rem;
         padding: 0;
         width: 100%;
-        height: 800px; /* Tall enough to spread 13 stickers */
+        max-width: 550px;
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .portrait-img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 240px;
-        max-width: 60%;
+        width: 80%;
+        max-width: 300px;
         height: auto;
         border-radius: 20px;
+        position: relative;
         z-index: 10;
     }
     
-    /* Make stickers float nicely without overlapping */
+    /* Make stickers EXACTLY like desktop, but shrunk by 50% to fit the small screen */
     .sticker {
-        font-size: 0.7rem;
-        padding: 0.4rem 0.7rem;
+        font-size: 0.55rem;
+        padding: 0.5rem 0.75rem;
     }
     .sticker-circle {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
+        padding: 0.25rem;
     }
-    .metric-number { font-size: 1.4rem; margin-bottom: 0.1rem; }
-    .metric-label { font-size: 0.6rem; }
+    .metric-number { font-size: 1.25rem; margin-bottom: 0; }
+    .metric-label { font-size: 0.45rem; letter-spacing: 0; }
 
-    /* Vertically distribute all 13 stickers over 800px */
-    .s-teal     { top: 2%;   left: 5%;   transform: rotate(-3deg); }
-    .s-pink     { top: 5%;   right: 5%;  transform: rotate(4deg); }
-    
-    .s-vision   { top: 18%;  left: 2%;   transform: rotate(2deg); }
-    .s-ai-orch  { top: 16%;  right: 2%;  transform: rotate(-2deg); }
-    
-    .s-blue     { top: 32%;  left: 0%;   transform: rotate(-2deg); }
-    .s-purple   { top: 30%;  right: 0%;  transform: rotate(2deg); }
-    
-    .s-yellow   { top: 48%;  left: 2%;   transform: rotate(1deg); }
-    .s-build    { top: 46%;  right: 2%;  transform: rotate(-1deg); }
-    
-    .s-cyan     { top: 62%;  left: 5%;   transform: rotate(3deg); }
-    .s-indigo   { top: 60%;  right: 5%;  transform: rotate(-3deg); }
-    
-    .s-api      { top: 76%;  left: 2%;   transform: rotate(-2deg); }
-    .s-orange   { top: 78%;  right: 2%;  transform: rotate(2deg); }
-    
-    .s-green    { top: 90%;  left: 50%;  transform: translateX(-50%) rotate(0deg); } /* Bottom center */
+    /* Fix only the most extreme left/right values that would overflow the narrow screen.
+       We DO NOT touch top/bottom, so they inherit perfectly from desktop and won't stretch! */
+    .s-blue { left: -10%; }
+    .s-yellow { left: -5%; }
+    .s-purple { right: -10%; }
+    .s-indigo { right: -5%; }
 
     /* The JavaScript will add .scroll-hover when they enter the viewport center */
     /* We define those classes here to match the desktop hover states */
@@ -612,10 +599,9 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     .workflow-step { padding: 1rem 0.75rem; }
     .metric-number { font-size: 1.8rem; }
     .btn { display: block; width: fit-content; margin: 0 auto; }
-    /* Stickers even smaller for small phones */
-    .portrait-container { height: 750px; }
-    .sticker { font-size: 0.65rem; padding: 0.4rem 0.6rem; }
-    .sticker-circle { width: 70px; height: 70px; }
-    .metric-number { font-size: 1.2rem; }
-    .metric-label { font-size: 0.55rem; }
+    /* Smaller text for tiny phones */
+    .sticker { font-size: 0.45rem; padding: 0.35rem 0.6rem; }
+    .sticker-circle { width: 55px; height: 55px; padding: 0.2rem; }
+    .metric-number { font-size: 1rem; }
+    .metric-label { font-size: 0.4rem; }
 }
