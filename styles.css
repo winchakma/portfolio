@@ -470,63 +470,73 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     .portrait-container {
         margin-top: 2rem;
         margin-bottom: 2rem;
-        padding: 1rem 0;
-        /* Ensure container fits width for absolute stickers */
+        padding: 0;
         width: 100%;
+        height: 800px; /* Tall enough to spread 13 stickers */
+        position: relative;
     }
     .portrait-img {
-        width: 100%;
-        max-width: 350px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 240px;
+        max-width: 60%;
         height: auto;
         border-radius: 20px;
-        margin: 0 auto;
-        display: block;
+        z-index: 10;
     }
     
-    /* Make stickers float around portrait like desktop, but scaled down */
+    /* Make stickers float nicely without overlapping */
     .sticker {
-        font-size: 0.75rem;
-        padding: 0.5rem 0.8rem;
+        font-size: 0.7rem;
+        padding: 0.4rem 0.7rem;
     }
     .sticker-circle {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
     }
-    .metric-number { font-size: 1.6rem; margin-bottom: 0.1rem; }
-    .metric-label { font-size: 0.65rem; }
+    .metric-number { font-size: 1.4rem; margin-bottom: 0.1rem; }
+    .metric-label { font-size: 0.6rem; }
 
-    /* Adjust positions to fit mobile screen */
-    .s-teal { top: 5%; left: 2%; transform: rotate(-5deg); }
-    .s-vision { top: 22%; left: -2%; transform: rotate(2deg); }
-    .s-blue { top: 40%; left: -5%; transform: rotate(-3deg); }
-    .s-api { top: 62%; left: -2%; transform: rotate(4deg); }
-    .s-cyan { bottom: 15%; left: 2%; transform: rotate(2deg); }
-    .s-yellow { bottom: 0%; left: 10%; transform: rotate(-2deg); }
+    /* Vertically distribute all 13 stickers over 800px */
+    .s-teal     { top: 2%;   left: 5%;   transform: rotate(-3deg); }
+    .s-pink     { top: 5%;   right: 5%;  transform: rotate(4deg); }
+    
+    .s-vision   { top: 18%;  left: 2%;   transform: rotate(2deg); }
+    .s-ai-orch  { top: 16%;  right: 2%;  transform: rotate(-2deg); }
+    
+    .s-blue     { top: 32%;  left: 0%;   transform: rotate(-2deg); }
+    .s-purple   { top: 30%;  right: 0%;  transform: rotate(2deg); }
+    
+    .s-yellow   { top: 48%;  left: 2%;   transform: rotate(1deg); }
+    .s-build    { top: 46%;  right: 2%;  transform: rotate(-1deg); }
+    
+    .s-cyan     { top: 62%;  left: 5%;   transform: rotate(3deg); }
+    .s-indigo   { top: 60%;  right: 5%;  transform: rotate(-3deg); }
+    
+    .s-api      { top: 76%;  left: 2%;   transform: rotate(-2deg); }
+    .s-orange   { top: 78%;  right: 2%;  transform: rotate(2deg); }
+    
+    .s-green    { top: 90%;  left: 50%;  transform: translateX(-50%) rotate(0deg); } /* Bottom center */
 
-    .s-pink { top: 5%; right: 2%; transform: rotate(5deg); }
-    .s-ai-orch { top: 22%; right: -2%; transform: rotate(-2deg); }
-    .s-purple { top: 40%; right: -5%; transform: rotate(4deg); }
-    .s-build { top: 62%; right: -2%; transform: rotate(1deg); }
-    .s-green { bottom: 15%; right: 2%; transform: rotate(-4deg); }
-    .s-indigo { bottom: 0%; right: 10%; transform: rotate(3deg); }
-    .s-orange { bottom: -10%; right: 25%; transform: rotate(-2deg); }
-
-    /* Make them PERMANENTLY colored on mobile so they don't look boring and don't need hover */
-    .s-teal { background: rgba(74, 210, 196, 0.2); border-color: #4ad2c4; color: #4ad2c4; text-shadow: 0 0 10px rgba(74, 210, 196, 0.5); }
-    .s-yellow { background: rgba(252, 217, 20, 0.2); border-color: #fcd914; color: #fcd914; text-shadow: 0 0 10px rgba(252, 217, 20, 0.5); }
-    .s-orange { background: rgba(255, 139, 61, 0.2); border-color: #ff8b3d; color: #ff8b3d; text-shadow: 0 0 10px rgba(255, 139, 61, 0.5); }
-    .s-pink { background: rgba(249, 77, 118, 0.2); border-color: #f94d76; color: #f94d76; text-shadow: 0 0 10px rgba(249, 77, 118, 0.5); }
-    .s-green { background: rgba(0, 211, 108, 0.2); border-color: #00d36c; color: #00d36c; text-shadow: 0 0 10px rgba(0, 211, 108, 0.5); }
-    .s-blue { background: rgba(59, 130, 246, 0.2); border-color: #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
-    .s-blue .metric-label { color: #3b82f6; text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
-    .s-purple { background: rgba(139, 92, 246, 0.2); border-color: #8b5cf6; box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); }
-    .s-purple .metric-label { color: #8b5cf6; text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
-    .s-cyan { background: rgba(6, 182, 212, 0.2); border-color: #06b6d4; color: #06b6d4; text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); box-shadow: 0 0 20px rgba(6, 182, 212, 0.4); }
-    .s-indigo { background: rgba(99, 102, 241, 0.2); border-color: #6366f1; color: #6366f1; text-shadow: 0 0 10px rgba(99, 102, 241, 0.5); box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); }
-    .s-api { background: rgba(16, 185, 129, 0.2); border-color: #10b981; color: #10b981; text-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
-    .s-ai-orch { background: rgba(244, 63, 94, 0.2); border-color: #f43f5e; color: #f43f5e; text-shadow: 0 0 10px rgba(244, 63, 94, 0.5); }
-    .s-vision { background: rgba(245, 158, 11, 0.2); border-color: #f59e0b; color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.5); }
-    .s-build { background: rgba(217, 70, 239, 0.2); border-color: #d946ef; color: #d946ef; text-shadow: 0 0 10px rgba(217, 70, 239, 0.5); }
+    /* The JavaScript will add .scroll-hover when they enter the viewport center */
+    /* We define those classes here to match the desktop hover states */
+    .s-teal.scroll-hover { background: rgba(74, 210, 196, 0.2); border-color: #4ad2c4; color: #4ad2c4; text-shadow: 0 0 10px rgba(74, 210, 196, 0.5); transform: scale(1.05) rotate(-3deg); z-index: 20; box-shadow: 0 0 20px rgba(74, 210, 196, 0.4); }
+    .s-yellow.scroll-hover { background: rgba(252, 217, 20, 0.2); border-color: #fcd914; color: #fcd914; text-shadow: 0 0 10px rgba(252, 217, 20, 0.5); transform: scale(1.05) rotate(1deg); z-index: 20; box-shadow: 0 0 20px rgba(252, 217, 20, 0.4); }
+    .s-orange.scroll-hover { background: rgba(255, 139, 61, 0.2); border-color: #ff8b3d; color: #ff8b3d; text-shadow: 0 0 10px rgba(255, 139, 61, 0.5); transform: scale(1.05) rotate(2deg); z-index: 20; box-shadow: 0 0 20px rgba(255, 139, 61, 0.4); }
+    .s-pink.scroll-hover { background: rgba(249, 77, 118, 0.2); border-color: #f94d76; color: #f94d76; text-shadow: 0 0 10px rgba(249, 77, 118, 0.5); transform: scale(1.05) rotate(4deg); z-index: 20; box-shadow: 0 0 20px rgba(249, 77, 118, 0.4); }
+    .s-green.scroll-hover { background: rgba(0, 211, 108, 0.2); border-color: #00d36c; color: #00d36c; text-shadow: 0 0 10px rgba(0, 211, 108, 0.5); transform: translateX(-50%) scale(1.05) rotate(0deg); z-index: 20; box-shadow: 0 0 20px rgba(0, 211, 108, 0.4); }
+    .s-blue.scroll-hover { background: rgba(59, 130, 246, 0.2); border-color: #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); transform: scale(1.05) rotate(-2deg); z-index: 20; }
+    .s-blue.scroll-hover .metric-label { color: #3b82f6; text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+    .s-purple.scroll-hover { background: rgba(139, 92, 246, 0.2); border-color: #8b5cf6; box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); transform: scale(1.05) rotate(2deg); z-index: 20; }
+    .s-purple.scroll-hover .metric-label { color: #8b5cf6; text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
+    .s-cyan.scroll-hover { background: rgba(6, 182, 212, 0.2); border-color: #06b6d4; color: #06b6d4; text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); box-shadow: 0 0 20px rgba(6, 182, 212, 0.4); transform: scale(1.05) rotate(3deg); z-index: 20; }
+    .s-indigo.scroll-hover { background: rgba(99, 102, 241, 0.2); border-color: #6366f1; color: #6366f1; text-shadow: 0 0 10px rgba(99, 102, 241, 0.5); box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); transform: scale(1.05) rotate(-3deg); z-index: 20; }
+    .s-api.scroll-hover { background: rgba(16, 185, 129, 0.2); border-color: #10b981; color: #10b981; text-shadow: 0 0 10px rgba(16, 185, 129, 0.5); transform: scale(1.05) rotate(-2deg); z-index: 20; box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+    .s-ai-orch.scroll-hover { background: rgba(244, 63, 94, 0.2); border-color: #f43f5e; color: #f43f5e; text-shadow: 0 0 10px rgba(244, 63, 94, 0.5); transform: scale(1.05) rotate(-2deg); z-index: 20; box-shadow: 0 0 20px rgba(244, 63, 94, 0.4); }
+    .s-vision.scroll-hover { background: rgba(245, 158, 11, 0.2); border-color: #f59e0b; color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.5); transform: scale(1.05) rotate(2deg); z-index: 20; box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); }
+    .s-build.scroll-hover { background: rgba(217, 70, 239, 0.2); border-color: #d946ef; color: #d946ef; text-shadow: 0 0 10px rgba(217, 70, 239, 0.5); transform: scale(1.05) rotate(-1deg); z-index: 20; box-shadow: 0 0 20px rgba(217, 70, 239, 0.4); }
 
     /* Hide the old separate mobile-skills component we made earlier */
     .mobile-skills { display: none !important; }
@@ -603,8 +613,9 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     .metric-number { font-size: 1.8rem; }
     .btn { display: block; width: fit-content; margin: 0 auto; }
     /* Stickers even smaller for small phones */
-    .sticker { font-size: 0.65rem; padding: 0.4rem 0.7rem; }
-    .sticker-circle { width: 75px; height: 75px; }
-    .metric-number { font-size: 1.3rem; }
+    .portrait-container { height: 750px; }
+    .sticker { font-size: 0.65rem; padding: 0.4rem 0.6rem; }
+    .sticker-circle { width: 70px; height: 70px; }
+    .metric-number { font-size: 1.2rem; }
     .metric-label { font-size: 0.55rem; }
 }

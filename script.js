@@ -53,6 +53,29 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(fader);
     });
 
+    // Mobile scroll-based hover effect for stickers
+    // Matches the CSS media query to only apply on touch screens
+    if (window.matchMedia("(pointer: coarse)").matches) {
+        const stickers = document.querySelectorAll('.sticker');
+        
+        const stickerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-hover');
+                } else {
+                    entry.target.classList.remove('scroll-hover');
+                }
+            });
+        }, {
+            // Trigger when the element is in the middle 40% of the screen
+            rootMargin: "-30% 0px -30% 0px" 
+        });
+
+        stickers.forEach(sticker => {
+            stickerObserver.observe(sticker);
+        });
+    }
+
     // Timeline Slider Logic
     const sliderTabs = document.querySelectorAll('.slider-tab');
     const sliderPanels = document.querySelectorAll('.slider-panel');
