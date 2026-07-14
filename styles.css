@@ -14,6 +14,8 @@
     --color-orange: #ff8b3d;
     --color-pink: #f94d76;
     --color-green: #00d36c;
+    /* Nav height for fixed positioning offset */
+    --nav-height: 72px;
 }
 
 * {
@@ -28,6 +30,7 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: var(--nav-height);
 }
 
 /* Background Blobs for Premium Aesthetic */
@@ -62,10 +65,11 @@ h1, h2, h3, h4, h5, h6 { text-transform: uppercase; font-weight: 800; letter-spa
 /* Navigation */
 nav {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 1.25rem 2rem; background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    padding: 1.25rem 2rem; background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
     z-index: 1000; border-bottom: 1px solid var(--glass-border);
-    position: sticky; top: 0;
+    position: fixed; top: 0; left: 0; width: 100%;
+    height: var(--nav-height);
 }
 .logo { font-weight: 800; font-size: 1.5rem; text-transform: uppercase; animation: float-text 5s ease-in-out infinite; }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -331,9 +335,10 @@ nav {
 .iframe-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer; display: block; }
 
 /* Buttons */
-.btn { padding: 0.8rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block; text-transform: uppercase; text-align: center; }
+.btn { padding: 0.8rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block; text-transform: uppercase; text-align: center; touch-action: manipulation; }
 .btn-primary { background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); color: white; border: none; }
 .btn-primary:hover { box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); transform: translateY(-2px); }
+.btn-primary:active { transform: scale(0.96); box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4); }
 
 /* Contact & Footer */
 .contact-card { text-align: center; }
@@ -351,6 +356,60 @@ nav {
 }
 .contact-divider { opacity: 0.4; }
 footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--glass-border); color: var(--text-muted); font-size: 0.9rem; }
+
+/* ── Mobile Skills Section (shown only on mobile) ─────────────────── */
+.mobile-skills {
+    display: none; /* hidden on desktop */
+}
+
+/* ── Touch / Active States for ALL devices ─────────────────────────── */
+/* Skill tags */
+.skill-tag { touch-action: manipulation; }
+.skill-tag:active { background: var(--accent-1); border-color: var(--accent-1); transform: scale(1.05); }
+
+/* Slider tabs */
+.slider-tab { touch-action: manipulation; }
+.slider-tab:active { transform: scale(0.95); }
+
+/* ── @media (hover: none) — touch-only devices ──────────────────────
+   On touch screens, :hover never fires reliably.
+   We disable hover transforms (which can get stuck on mobile)
+   and instead use :active for immediate tactile feedback.
+─────────────────────────────────────────────────────────────────── */
+@media (hover: none) {
+    /* Glass cards: disable the translateY hover (gets stuck on mobile) */
+    .glass-card:hover {
+        transform: none;
+        border-color: var(--glass-border);
+        box-shadow: var(--glass-shadow);
+    }
+    /* Provide tap feedback instead */
+    .glass-card:active {
+        transform: scale(0.985);
+        border-color: var(--accent-1);
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.35);
+    }
+    /* Project cards tap */
+    .project-card:active {
+        border-color: var(--accent-2);
+        box-shadow: 0 0 30px rgba(139, 92, 246, 0.35);
+    }
+    /* Buttons */
+    .btn-primary:hover { transform: none; box-shadow: none; }
+    .btn-primary:active { transform: scale(0.95); box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4); }
+    /* Skill tags */
+    .skill-tag:hover { transform: none; background: rgba(255,255,255,0.05); border-color: var(--glass-border); }
+    .skill-tag:active { background: var(--accent-1); border-color: var(--accent-1); transform: scale(1.06); }
+    /* Nav links */
+    .nav-links a:active { color: var(--accent-1); }
+    /* Workflow steps */
+    .workflow-step:active { border-color: var(--accent-1) !important; box-shadow: 0 0 20px rgba(59, 130, 246, 0.3) !important; }
+    .workflow-step:active .step-number { color: var(--accent-1) !important; }
+    /* Slider tabs */
+    .slider-tab:active { transform: scale(0.93); }
+    /* Ms pills */
+    .ms-pill:active { opacity: 0.7; transform: scale(0.95); }
+}
 
 /* ===================== RESPONSIVE BREAKPOINTS ===================== */
 
@@ -431,10 +490,61 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     /* Section */
     .section-title { font-size: 2.2rem; letter-spacing: 1px; }
     .section { padding: 16px 1rem; }
+
+    /* Mobile Skills Section */
+    .mobile-skills {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+        padding: 0 1rem 2rem;
+        width: 100%;
+    }
+    .mobile-skills-metrics {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+        max-width: 400px;
+    }
+    .ms-metric {
+        flex: 1;
+        background: var(--bg-card);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        border-radius: 16px;
+        padding: 1rem 0.75rem;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .ms-metric .metric-number { font-size: 2.2rem; font-weight: 900; line-height: 1; margin-bottom: 0.25rem; }
+    .ms-metric .metric-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .mobile-skills-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        justify-content: center;
+        max-width: 500px;
+    }
+    .ms-pill {
+        background: var(--bg-card);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+        border-radius: 50px;
+        padding: 0.45rem 1rem;
+        font-size: 0.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.2s ease;
+    }
 }
 
 /* --- Large phone (600px) --- */
 @media (max-width: 600px) {
+    :root { --nav-height: 62px; }
     nav { padding: 1rem 1.25rem; }
     .logo { font-size: 1.2rem; }
 
@@ -474,6 +584,7 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
 
 /* --- Small phone (480px) --- */
 @media (max-width: 480px) {
+    :root { --nav-height: 58px; }
     .arch-grid { border-radius: 20vw 20vw 0 0; }
     .portrait-img { width: 100%; border-radius: 10px; }
     .section-title { font-size: 1.5rem; letter-spacing: 0.5px; }
@@ -482,4 +593,9 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     .workflow-step { padding: 1rem 0.75rem; }
     .metric-number { font-size: 2rem; }
     .btn { display: block; width: fit-content; margin: 0 auto; }
+    /* Mobile skills tighter on small phones */
+    .ms-metric { padding: 0.75rem 0.5rem; }
+    .ms-metric .metric-number { font-size: 1.8rem; }
+    .ms-pill { font-size: 0.72rem; padding: 0.4rem 0.8rem; }
+    .mobile-skills { gap: 0.9rem; padding: 0 0.75rem 1.5rem; }
 }
