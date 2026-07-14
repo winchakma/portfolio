@@ -487,8 +487,8 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     .portrait-container {
         margin: 2rem auto;
         padding: 0;
-        width: 55vw; /* This is the key: narrower container means negative margins don't bleed off screen! */
-        max-width: 350px;
+        width: 100%;
+        max-width: 550px;
         position: relative;
         display: flex;
         justify-content: center;
@@ -502,36 +502,48 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
         z-index: 10;
     }
     
-    /* Minimized box sizes as requested, so they fit exactly in the inherited desktop layout */
-    .sticker {
-        font-size: 0.45rem;
-        padding: 0.35rem 0.6rem;
-    }
-    .sticker-circle {
-        width: 55px;
-        height: 55px;
-        padding: 0.15rem;
-    }
-    .metric-number { font-size: 1rem; margin-bottom: 0; }
-    .metric-label { font-size: 0.35rem; letter-spacing: 0; }
+    /* 
+      By using transform: scale() instead of font-size, we bypass the browser's minimum font size limit,
+      which is what caused the boxes to overlap. We shift the coordinates exactly +25% inwards so they
+      perfectly preserve the desktop cloud shape without bleeding off the mobile screen!
+    */
+    .sticker { transform: scale(0.45); }
+    .s-teal, .s-vision, .s-blue, .s-api, .s-cyan, .s-yellow { transform-origin: left center; }
+    .s-pink, .s-ai-orch, .s-purple, .s-build, .s-green, .s-indigo, .s-orange { transform-origin: right center; }
+
+    /* Exactly +25% shifted from desktop */
+    .s-teal   { top: 15%; left: 40%; }
+    .s-vision { top: 20%; left: 15%; }
+    .s-blue   { top: 40%; left: 0%; }
+    .s-api    { top: 60%; left: 10%; }
+    .s-cyan   { bottom: 15%; left: 25%; }
+    .s-yellow { bottom: 5%; left: 5%; }
+
+    .s-pink     { top: 15%; right: 30%; }
+    .s-ai-orch  { top: 30%; right: 15%; }
+    .s-purple   { top: 45%; right: 0%; }
+    .s-build    { top: 65%; right: 10%; }
+    .s-green    { bottom: 25%; right: 35%; }
+    .s-indigo   { bottom: 5%; right: 5%; }
+    .s-orange   { bottom: -5%; right: 45%; }
 
     /* The JavaScript will add .scroll-hover when they enter the viewport center */
-    /* We define those classes here to match the desktop hover states */
-    .s-teal.scroll-hover { background: rgba(74, 210, 196, 0.2); border-color: #4ad2c4; color: #4ad2c4; text-shadow: 0 0 10px rgba(74, 210, 196, 0.5); transform: scale(1.05) rotate(-3deg); z-index: 20; box-shadow: 0 0 20px rgba(74, 210, 196, 0.4); }
-    .s-yellow.scroll-hover { background: rgba(252, 217, 20, 0.2); border-color: #fcd914; color: #fcd914; text-shadow: 0 0 10px rgba(252, 217, 20, 0.5); transform: scale(1.05) rotate(1deg); z-index: 20; box-shadow: 0 0 20px rgba(252, 217, 20, 0.4); }
-    .s-orange.scroll-hover { background: rgba(255, 139, 61, 0.2); border-color: #ff8b3d; color: #ff8b3d; text-shadow: 0 0 10px rgba(255, 139, 61, 0.5); transform: scale(1.05) rotate(2deg); z-index: 20; box-shadow: 0 0 20px rgba(255, 139, 61, 0.4); }
-    .s-pink.scroll-hover { background: rgba(249, 77, 118, 0.2); border-color: #f94d76; color: #f94d76; text-shadow: 0 0 10px rgba(249, 77, 118, 0.5); transform: scale(1.05) rotate(4deg); z-index: 20; box-shadow: 0 0 20px rgba(249, 77, 118, 0.4); }
-    .s-green.scroll-hover { background: rgba(0, 211, 108, 0.2); border-color: #00d36c; color: #00d36c; text-shadow: 0 0 10px rgba(0, 211, 108, 0.5); transform: translateX(-50%) scale(1.05) rotate(0deg); z-index: 20; box-shadow: 0 0 20px rgba(0, 211, 108, 0.4); }
-    .s-blue.scroll-hover { background: rgba(59, 130, 246, 0.2); border-color: #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); transform: scale(1.05) rotate(-2deg); z-index: 20; }
+    /* We redefine those classes here to scale from 0.45 to 0.55 instead of 1.05 */
+    .s-teal.scroll-hover   { background: rgba(74, 210, 196, 0.2); border-color: #4ad2c4; color: #4ad2c4; text-shadow: 0 0 10px rgba(74, 210, 196, 0.5); transform: scale(0.55) rotate(-3deg); z-index: 20; box-shadow: 0 0 20px rgba(74, 210, 196, 0.4); }
+    .s-yellow.scroll-hover { background: rgba(252, 217, 20, 0.2); border-color: #fcd914; color: #fcd914; text-shadow: 0 0 10px rgba(252, 217, 20, 0.5); transform: scale(0.55) rotate(1deg); z-index: 20; box-shadow: 0 0 20px rgba(252, 217, 20, 0.4); }
+    .s-orange.scroll-hover { background: rgba(255, 139, 61, 0.2); border-color: #ff8b3d; color: #ff8b3d; text-shadow: 0 0 10px rgba(255, 139, 61, 0.5); transform: scale(0.55) rotate(2deg); z-index: 20; box-shadow: 0 0 20px rgba(255, 139, 61, 0.4); }
+    .s-pink.scroll-hover   { background: rgba(249, 77, 118, 0.2); border-color: #f94d76; color: #f94d76; text-shadow: 0 0 10px rgba(249, 77, 118, 0.5); transform: scale(0.55) rotate(4deg); z-index: 20; box-shadow: 0 0 20px rgba(249, 77, 118, 0.4); }
+    .s-green.scroll-hover  { background: rgba(0, 211, 108, 0.2); border-color: #00d36c; color: #00d36c; text-shadow: 0 0 10px rgba(0, 211, 108, 0.5); transform: scale(0.55) rotate(0deg); z-index: 20; box-shadow: 0 0 20px rgba(0, 211, 108, 0.4); }
+    .s-blue.scroll-hover   { background: rgba(59, 130, 246, 0.2); border-color: #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); transform: scale(0.55) rotate(-2deg); z-index: 20; }
     .s-blue.scroll-hover .metric-label { color: #3b82f6; text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
-    .s-purple.scroll-hover { background: rgba(139, 92, 246, 0.2); border-color: #8b5cf6; box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); transform: scale(1.05) rotate(2deg); z-index: 20; }
+    .s-purple.scroll-hover { background: rgba(139, 92, 246, 0.2); border-color: #8b5cf6; box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); transform: scale(0.55) rotate(2deg); z-index: 20; }
     .s-purple.scroll-hover .metric-label { color: #8b5cf6; text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
-    .s-cyan.scroll-hover { background: rgba(6, 182, 212, 0.2); border-color: #06b6d4; color: #06b6d4; text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); box-shadow: 0 0 20px rgba(6, 182, 212, 0.4); transform: scale(1.05) rotate(3deg); z-index: 20; }
-    .s-indigo.scroll-hover { background: rgba(99, 102, 241, 0.2); border-color: #6366f1; color: #6366f1; text-shadow: 0 0 10px rgba(99, 102, 241, 0.5); box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); transform: scale(1.05) rotate(-3deg); z-index: 20; }
-    .s-api.scroll-hover { background: rgba(16, 185, 129, 0.2); border-color: #10b981; color: #10b981; text-shadow: 0 0 10px rgba(16, 185, 129, 0.5); transform: scale(1.05) rotate(-2deg); z-index: 20; box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
-    .s-ai-orch.scroll-hover { background: rgba(244, 63, 94, 0.2); border-color: #f43f5e; color: #f43f5e; text-shadow: 0 0 10px rgba(244, 63, 94, 0.5); transform: scale(1.05) rotate(-2deg); z-index: 20; box-shadow: 0 0 20px rgba(244, 63, 94, 0.4); }
-    .s-vision.scroll-hover { background: rgba(245, 158, 11, 0.2); border-color: #f59e0b; color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.5); transform: scale(1.05) rotate(2deg); z-index: 20; box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); }
-    .s-build.scroll-hover { background: rgba(217, 70, 239, 0.2); border-color: #d946ef; color: #d946ef; text-shadow: 0 0 10px rgba(217, 70, 239, 0.5); transform: scale(1.05) rotate(-1deg); z-index: 20; box-shadow: 0 0 20px rgba(217, 70, 239, 0.4); }
+    .s-cyan.scroll-hover   { background: rgba(6, 182, 212, 0.2); border-color: #06b6d4; color: #06b6d4; text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); box-shadow: 0 0 20px rgba(6, 182, 212, 0.4); transform: scale(0.55) rotate(3deg); z-index: 20; }
+    .s-indigo.scroll-hover { background: rgba(99, 102, 241, 0.2); border-color: #6366f1; color: #6366f1; text-shadow: 0 0 10px rgba(99, 102, 241, 0.5); box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); transform: scale(0.55) rotate(-3deg); z-index: 20; }
+    .s-api.scroll-hover    { background: rgba(16, 185, 129, 0.2); border-color: #10b981; color: #10b981; text-shadow: 0 0 10px rgba(16, 185, 129, 0.5); transform: scale(0.55) rotate(-2deg); z-index: 20; box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+    .s-ai-orch.scroll-hover{ background: rgba(244, 63, 94, 0.2); border-color: #f43f5e; color: #f43f5e; text-shadow: 0 0 10px rgba(244, 63, 94, 0.5); transform: scale(0.55) rotate(-2deg); z-index: 20; box-shadow: 0 0 20px rgba(244, 63, 94, 0.4); }
+    .s-vision.scroll-hover { background: rgba(245, 158, 11, 0.2); border-color: #f59e0b; color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.5); transform: scale(0.55) rotate(2deg); z-index: 20; box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); }
+    .s-build.scroll-hover  { background: rgba(217, 70, 239, 0.2); border-color: #d946ef; color: #d946ef; text-shadow: 0 0 10px rgba(217, 70, 239, 0.5); transform: scale(0.55) rotate(-1deg); z-index: 20; box-shadow: 0 0 20px rgba(217, 70, 239, 0.4); }
 
     /* Hide the old separate mobile-skills component we made earlier */
     .mobile-skills { display: none !important; }
