@@ -534,10 +534,10 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
     .s-yellow { left: 3%; }
 
     .s-pink { right: 8%; }
-    .s-ai-orch { right: 4%; }
-    .s-purple { right: 2%; }
-    .s-build { right: 6%; top: 75%; }
-    .s-green { right: 12%; bottom: 38%; }
+    .s-ai-orch { right: 4%; top: 26%; }
+    .s-purple { right: 2%; top: 42%; }
+    .s-green { right: 12%; top: 62%; bottom: auto; }
+    .s-build { right: 6%; top: 80%; }
     .s-indigo { right: 3%; }
     .s-orange { right: 18%; }
 
