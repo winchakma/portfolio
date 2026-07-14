@@ -525,6 +525,22 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
         letter-spacing: 0px;
     }
 
+    /* Fix bleeding by bringing stickers inside the viewport horizontally */
+    .s-teal { left: 15%; }
+    .s-vision { left: 5%; }
+    .s-blue { left: 2%; }
+    .s-api { left: 6%; }
+    .s-cyan { left: 8%; }
+    .s-yellow { left: 3%; }
+
+    .s-pink { right: 8%; }
+    .s-ai-orch { right: 4%; }
+    .s-purple { right: 2%; }
+    .s-build { right: 6%; }
+    .s-green { right: 12%; }
+    .s-indigo { right: 3%; }
+    .s-orange { right: 18%; }
+
     /* The JavaScript will add .scroll-hover when they enter the viewport center */
     .s-teal.scroll-hover   { background: rgba(74, 210, 196, 0.2); border-color: #4ad2c4; color: #4ad2c4; text-shadow: 0 0 10px rgba(74, 210, 196, 0.5); transform: scale(1.1) rotate(-3deg); z-index: 20; box-shadow: 0 0 20px rgba(74, 210, 196, 0.4); }
     .s-yellow.scroll-hover { background: rgba(252, 217, 20, 0.2); border-color: #fcd914; color: #fcd914; text-shadow: 0 0 10px rgba(252, 217, 20, 0.5); transform: scale(1.1) rotate(1deg); z-index: 20; box-shadow: 0 0 20px rgba(252, 217, 20, 0.4); }
