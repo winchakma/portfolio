@@ -19,12 +19,17 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">Win Chakma</div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
             <li><a href="#journey">Journey</a></li>
             <li><a href="#workflow">Process</a></li>
             <li><a href="#projects">Work</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
     <header class="hero-header">
@@ -316,7 +321,11 @@
     <div id="contact" class="section glass-card contact-card">
         <h2 class="section-title">Get In Touch</h2>
         <p>If you are building a future-forward product and need an architect who thinks like a founder, let's connect.</p>
-        <p style="font-weight: 800; color: var(--text-muted); margin-bottom: 2rem;">📧 winchakma123@gmail.com &nbsp;|&nbsp; 📞 +8801617558048</p>
+        <div class="contact-info">
+            <span>📧 winchakma123@gmail.com</span>
+            <span class="contact-divider">|</span>
+            <span>📞 +8801617558048</span>
+        </div>
         <a href="https://www.linkedin.com/in/win-chakma-86b616278/" target="_blank" class="btn btn-primary">LinkedIn Profile</a>
     </div>
 

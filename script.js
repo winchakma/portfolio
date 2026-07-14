@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     block: 'start'
                 });
             }
+            // Close mobile nav when a link is tapped
+            closeMobileNav();
         });
     });
 
@@ -83,4 +85,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sliderTabs.length > 0) {
         startSliderInterval();
     }
+
+    // ── Hamburger / Mobile Navigation ──────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+
+    function openMobileNav() {
+        if (!hamburger || !navLinks) return;
+        hamburger.classList.add('open');
+        navLinks.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileNav() {
+        if (!hamburger || !navLinks) return;
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.contains('open') ? closeMobileNav() : openMobileNav();
+        });
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMobileNav();
+    });
 });
