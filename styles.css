@@ -485,64 +485,35 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
         padding-bottom: 1rem;
     }
     .portrait-container {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        padding: 1rem 1rem 0;
-    }
-    .portrait-img {
-        width: 90%;
-        max-width: 550px;
-        height: auto;
-        border-radius: 20px;
-    }
-    .portrait-container {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin: 2rem auto;
         padding: 0;
-        width: 100%;
-        max-width: 550px;
+        width: 55vw; /* This is the key: narrower container means negative margins don't bleed off screen! */
+        max-width: 350px;
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .portrait-img {
-        width: 80%;
-        max-width: 300px;
+        width: 100%;
         height: auto;
         border-radius: 20px;
         position: relative;
         z-index: 10;
     }
     
-    /* Make stickers EXACTLY like desktop, but shrunk by 50% to fit the small screen */
+    /* Minimized box sizes as requested, so they fit exactly in the inherited desktop layout */
     .sticker {
-        font-size: 0.55rem;
-        padding: 0.5rem 0.75rem;
+        font-size: 0.45rem;
+        padding: 0.35rem 0.6rem;
     }
     .sticker-circle {
-        width: 70px;
-        height: 70px;
-        padding: 0.25rem;
+        width: 55px;
+        height: 55px;
+        padding: 0.15rem;
     }
-    .metric-number { font-size: 1.25rem; margin-bottom: 0; }
-    .metric-label { font-size: 0.45rem; letter-spacing: 0; }
-
-    /* Precision positioning to avoid collisions and use empty space around the head */
-    .s-teal   { top: 2%; left: 15%; }
-    .s-vision { top: 16%; left: 2%; }
-    .s-blue   { top: 32%; left: 0%; }
-    .s-api    { top: 55%; left: 1%; }
-    .s-cyan   { bottom: 25%; left: 2%; }
-    .s-yellow { bottom: 10%; left: 12%; }
-
-    .s-pink     { top: 4%; right: 15%; }
-    .s-ai-orch  { top: 18%; right: 2%; }
-    .s-purple   { top: 35%; right: 0%; }
-    .s-build    { top: 58%; right: 1%; }
-    .s-green    { bottom: 22%; right: 2%; }
-    .s-indigo   { bottom: 8%; right: 12%; }
-    .s-orange   { bottom: -6%; right: 30%; }
+    .metric-number { font-size: 1rem; margin-bottom: 0; }
+    .metric-label { font-size: 0.35rem; letter-spacing: 0; }
 
     /* The JavaScript will add .scroll-hover when they enter the viewport center */
     /* We define those classes here to match the desktop hover states */
@@ -629,16 +600,9 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--gla
 @media (max-width: 480px) {
     :root { --nav-height: 58px; }
     .arch-grid { border-radius: 20vw 20vw 0 0; }
-    .portrait-img { width: 80% !important; max-width: 280px !important; border-radius: 10px; }
     .section-title { font-size: 1.5rem; letter-spacing: 0.5px; }
     .glass-card { padding: 1rem; border-radius: 12px; }
     .slider-container { gap: 1.25rem; padding: 1rem; }
     .workflow-step { padding: 1rem 0.75rem; }
-    .metric-number { font-size: 1.8rem; }
     .btn { display: block; width: fit-content; margin: 0 auto; }
-    /* Smaller text for tiny phones */
-    .sticker { font-size: 0.45rem; padding: 0.35rem 0.6rem; }
-    .sticker-circle { width: 55px; height: 55px; padding: 0.2rem; }
-    .metric-number { font-size: 1rem; }
-    .metric-label { font-size: 0.4rem; }
 }
